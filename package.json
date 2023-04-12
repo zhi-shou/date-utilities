@@ -1,0 +1,17 @@
+{
+  "name": "date-utils-js",
+  "version": "1.0.1",
+  "description": "",
+  "main": "date-utils-js.js",
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhi-shou/date-utilities.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
