@@ -146,6 +146,34 @@ function getQuarterOfYear(dateStr = new Date) {
   return quarter;
 }
 
+//判断日期是否是闰年
+function isLeapYear(date) {
+  const year = date.getFullYear();
+  return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0;
+}
+
+//判断日期是否在特定的日期之内
+function isInRange(date, start, end) {
+  const timestamp = date.getTime();
+  const startTimestamp = start.getTime();
+  const endTimestamp = end.getTime();
+  return timestamp >= startTimestamp && timestamp <= endTimestamp;
+}
+
+//判断是否为工作日，周一到周五为工作日
+function isWeekday(date) {
+  const day = date.getDay();
+  return day >= 1 && day <= 5;
+}
+
+//获取本地时间和UTC时间
+function localOrUtc(type) {
+  const currentDate = new Date();
+  const localTime = currentDate.toLocaleString();
+  const utcTime = currentDate.toUTCString();
+  return type === 'local' ? localTime: utcTime;
+}
+
 module.exports = {
   getNextNDays,
   formatDate,
@@ -153,4 +181,8 @@ module.exports = {
   getDayOfWeek,
   getMonthOfYear,
   getQuarterOfYear,
+  isLeapYear,
+  isInRange,
+  isWeekday,
+  localOrUtc,
 }

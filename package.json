@@ -1,12 +1,15 @@
 {
   "name": "date-utils-js",
   "version": "1.0.3",
-  "description": "",
+  "description": "提供一些方法来对日期做相应的处理，",
   "main": "date-utils-js.js",
   "readme": "README.md",
   "repository": {
     "type": "git",
     "url": "https://github.com/zhi-shou/date-utilities.git"
+  },
+  "publishConfig": {
+    "branch": "main"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

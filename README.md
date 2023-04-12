@@ -20,13 +20,18 @@ import {
   formatDate,
   getDayOfWeek,
   getMonthOfYear,
-  getQuarterOfYear
+  getQuarterOfYear,
+  isLeapYear,
+  isInRange,
+  isWeekday,
+  localOrUtc,
 } from 'date-utils-js';
 
-//getPreviousNDays
-//获取指定日期向前指定天数的日期，默认取昨天, format默认yyyy-mm-dd
-getPreviousNDays({dateStr=new Date(), nDays =1, format})
-
+/*getPreviousNDays
+*获取指定日期向前指定天数的日期，默认取昨天, format默认yyyy-mm-dd
+*getPreviousNDays({dateStr=new Date(), nDays =1, format})
+*/
+//示例
 console.log(getPreviousNDays('2023-04-11', 3,'yyyy-mm-dd'));
 //"2023-04-08"
 console.log(getPreviousNDays('2023/04/11', 5, 'yyyy/mm/dd'));
@@ -35,9 +40,11 @@ console.log(getPreviousNDays('2023-04-11 10:30:00', 7, 'yyyy-mm-dd hh:mm:ss'));
 // "2023-04-04 10:30:00"
 
 
-//getNextNDays
-//获取指定日期向后指定天数的日期，默认取明天, format默认yyyy-mm-dd
-getNextNDays({dateStr=new Date(),nDays=1, format})
+/*getNextNDays
+*获取指定日期向后指定天数的日期，默认取明天, format默认yyyy-mm-dd
+*getNextNDays({dateStr=new Date(),nDays=1, format})
+*/
+//示例
 console.log(getNextNDays('2023-04-11', 3, 'yyyy-mm-dd'));
 // "2023-04-14"
 console.log(getNextNDays('2023/04/11', 5, 'yyyy/mm/dd'));
@@ -46,10 +53,11 @@ console.log(getNextNDays('2023-04-11 10:30:00', 7, 'yyyy-mm-dd hh:mm:ss'));
 // "2023-04-18 10:30:00"
 
 
-//formatDate
-//根据传入的占位符返回格式化后的日期, 默今天,format默认yyyy-MM-dd
-formatDate({dateStr=new Date, format=yyyy-MM-dd})
-
+/*formatDate
+*根据传入的占位符返回格式化后的日期, 默今天,format默认yyyy-MM-dd
+*formatDate({dateStr=new Date, format=yyyy-MM-dd})
+*/
+//示例
 console.log(formatDate('2023-04-11', 'yyyy/MM/dd'));
 // "2023/04/11"
 console.log(formatDate('2023-04-11', 'yyyy年MM月dd日'));
@@ -60,28 +68,65 @@ console.log(formatDate('2023-04-11 14:30:00', 'yyyy年M月d日 HH:mm:ss'));
 // "2023年4月11日 14:30:00"
 
 
-//getDayOfWeek
-//获取指定日期是星期几,默认取今天是星期几
-getDayOfWeek(dateStr = new Date)
-
+/*getDayOfWeek
+*获取指定日期是星期几,默认取今天是星期几
+*getDayOfWeek(dateStr = new Date)
+*/
+//示例
 console.log(getDayOfWeek('2023-04-11')); // "一"
 console.log(getDayOfWeek('2023-04-12')); // "二"
 console.log(getDayOfWeek('2023-04-13')); // "三"
 
-//getMonthOfYear
-//获取指定日期所在月份,默认取今天是几月
-getMonthOfYear(dateStr = new Date)
-
+/*getMonthOfYear
+*获取指定日期所在月份,默认取今天是几月
+*getMonthOfYear(dateStr = new Date)
+*/
+//示例
 console.log(getMonthOfYear('2023-04-11')); // 4
 console.log(getMonthOfYear('2023-05-01')); // 5
 console.log(getMonthOfYear('2023-12-31')); // 12
 
 
-//getQuarterOfYear
-//获取指定日期所在的季度,默认取今天是几季度
-getQuarterOfYear(dateStr = new Date)
-
+/*getQuarterOfYear
+*获取指定日期所在的季度,默认取今天是几季度
+*调用方式：getQuarterOfYear(dateStr = new Date)
+*/
+//示例
 console.log(getQuarterOfYear('2023-01-01')); // 1
 console.log(getQuarterOfYear('2023-04-11')); // 2
 console.log(getQuarterOfYear('2023-10-31')); // 4
+
+/*isLeapYear
+*判断日期是否是闰年
+*调用方式：isLeapYear(date)
+*/
+//示例
+const date = new Date("2024-01-01");
+console.log(isLeapYear(date)); // true
+
+/*isInRange
+*判断日期是否是闰年
+*调用方式：isInRange(date, start, end)
+*/
+// 示例
+const date = new Date("2023-05-01");
+const start = new Date("2023-04-01");
+const end = new Date("2023-06-01");
+console.log(isInRange(date, start, end)); // true
+
+/*isWeekday
+*判断日期是否是闰年
+*iisWeekday(date)
+*/
+// 示例
+const date = new Date("2023-04-12");
+console.log(isWeekday(date)); // true，因为是星期三
+
+/*localOrUtc
+*判断日期是否是闰年
+*localOrUtc(type)
+*/
+// 示例
+const type = "local";
+console.log(localOrUtc(type)); // 输出本地时间
 ```
