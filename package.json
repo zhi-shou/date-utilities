@@ -1,6 +1,6 @@
 {
   "name": "date-utils-js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "提供一些方法来对日期做相应的处理，",
   "main": "date-utils-js.js",
   "readme": "README.md",
@@ -14,7 +14,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["date", "format", "days"],
+  "keywords": [
+    "date",
+    "format",
+    "days"
+  ],
   "author": "",
   "license": "ISC"
 }
