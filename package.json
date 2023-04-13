@@ -1,6 +1,6 @@
 {
   "name": "date-utils-js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "提供一些方法来对日期做相应的处理，",
   "main": "date-utils-js.js",
   "readme": "README.md",
