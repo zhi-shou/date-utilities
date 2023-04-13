@@ -5,11 +5,11 @@
 
 ### 安装
 
-```
+```shell
 npm install date-utils-js
 ```
 或者
-```
+```shell
 yarn add date-utils-js
 ```
 ### 使用方法
