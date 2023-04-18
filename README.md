@@ -121,7 +121,7 @@ const date = new Date("2024-01-01");
 console.log(isLeapYear(date)); // true
 
 /*isInRange
-*判断日期是否是闰年
+*判断日期是否在特定的日期之内
 *调用方式：isInRange(date, start, end)
 */
 // 示例
@@ -131,7 +131,7 @@ const end = new Date("2023-06-01");
 console.log(isInRange(date, start, end)); // true
 
 /*isWeekday
-*判断日期是否是闰年
+*判断是否为工作日，周一到周五为工作日
 *iisWeekday(date)
 */
 // 示例
@@ -139,7 +139,7 @@ const date = new Date("2023-04-12");
 console.log(isWeekday(date)); // true，因为是星期三
 
 /*localOrUtc
-*判断日期是否是闰年
+*获取本地时间和UTC时间
 *localOrUtc(type)
 */
 // 示例
